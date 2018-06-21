@@ -6,8 +6,23 @@ ingredients = [
     ["mayo", "mustard", "tabasco"]
 ]
 
-def sandwich_request(ingredients, order) 
-  # your code here!
+def sandwich_request(ingredients, order)
+  i=0
+  n=false
+  order.each do |item|
+    while i<ingredients.length
+      if ingredients[i].include?(item)==true
+        n==true
+        break
+      else
+        i=i+1
+      end
+    end
+    if n==false
+      return false
+    end
+  end
+  return true
 end
 
 # example city_info hash
